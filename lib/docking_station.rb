@@ -6,4 +6,7 @@ class DockingStation
     bike.working?
     bike
   end
+
+  def receive_bike(bike)
+  end
 end

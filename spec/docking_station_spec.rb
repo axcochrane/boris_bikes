@@ -16,11 +16,15 @@ describe DockingStation do
       expect(docking_station.release_bike).to be_working
     end
     
+    describe "when bike is docked"
+    it "expects docking station to receive a bike" do
+      expect(docking_station.receive_bike). with(1)
+    end
+
     describe "when user checks for presence of bike" do
       xit "checks docking station for instance of Bike class"
     end
 
-    
     end
   end
 
