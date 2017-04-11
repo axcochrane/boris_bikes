@@ -16,10 +16,10 @@ class DockingStation
   def release_bike
     bike = Bike.new
     bike.working?
-    bike # -- not certain i fully understand why this bike is necessary, i know it fails the tests without it though
+    bike 
   end
 
-  def receive_bike(bike)
+  def dock_bike(bike)
   	@bike_count += 1
   end
 end
