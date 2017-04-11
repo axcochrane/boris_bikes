@@ -20,8 +20,9 @@ describe DockingStation do
 end
 
 describe DockingStation do
-  it 'instance responds to (:dock_bike)' do
-    expect(subject).to respond_to(:dock_bike).with(1).argument
+  it '(:dock_bike) return instance of Bike class' do
+    bike = Bike.new
+    expect(subject.dock_bike(bike)).to eq(bike)
   end
 end
 
