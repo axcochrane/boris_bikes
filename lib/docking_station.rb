@@ -1,4 +1,4 @@
-require "./lib/bike.rb"
+require 'bike'
 
 class DockingStation
 	def initialize

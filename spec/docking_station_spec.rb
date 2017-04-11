@@ -21,7 +21,7 @@ end
 
 describe DockingStation do
   it 'instance responds to (:dock_bike)' do
-    expect(subject).to respond_to(:dock_bike)
+    expect(subject).to respond_to(:dock_bike).with(1).argument
   end
 end
 
