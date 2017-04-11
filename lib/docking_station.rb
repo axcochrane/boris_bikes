@@ -1,16 +1,10 @@
-require 'bike'
+#require 'bike'
 
 class DockingStation
+	attr_accessor :bikes
+
 	def initialize
-		@bike_count = 10
-	end
-
-	def bike_count
-		@bike_count
-	end
-
-	def set_bike_count (new_count)
-		@bike_count = new_count
+		@bikes = []
 	end
 
   def release_bike
@@ -20,6 +14,23 @@ class DockingStation
   end
 
   def dock_bike(bike)
-  	@bike_count += 1
+  	@bikes << bike
   end
+
+=begin
+  def bikes
+  	@bikes
+  end
+
+  def bikes
+		@bike_count
+	end
+
+	def set_bike_count (new_count)
+		@bike_count = new_count
+	end
+=end
+
 end
+docking_station = DockingStation.new
+puts docking_station.bikes
