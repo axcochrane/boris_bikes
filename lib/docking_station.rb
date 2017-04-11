@@ -2,15 +2,15 @@ require "./lib/bike.rb"
 
 class DockingStation
 	def initialize
-		@has_bike = true
+		@bike_count = 10
 	end
 
-	def has_bike?
-		@has_bike
+	def bike_count
+		@bike_count
 	end
 
-	def set_bike_status (new_status)
-		@has_bike = new_status
+	def set_bike_count (new_count)
+		@bike_count = new_count
 	end
 
   def release_bike
