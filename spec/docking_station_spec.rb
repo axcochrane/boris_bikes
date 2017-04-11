@@ -18,7 +18,7 @@ describe DockingStation do
     
     describe "when bike is docked"
     it "expects docking station to receive a bike" do
-      expect(docking_station.receive_bike). with(1)
+      expect(docking_station.receive_bike(@bike)). with(1)
     end
 
     describe "when user checks for presence of bike" do
