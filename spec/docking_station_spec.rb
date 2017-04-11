@@ -13,8 +13,9 @@ describe DockingStation do
 end
 
 describe DockingStation do
-  it 'instance releases working Bike' do
-    expect(subject.release_bike).to be_working
+  it 'releases working Bike' do
+    bike = subject.release_bike
+    expect(bike).to be_working
   end
 end
 
