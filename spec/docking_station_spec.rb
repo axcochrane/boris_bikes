@@ -27,8 +27,11 @@ describe DockingStation do
 end
 
 describe DockingStation do
-  it 'instance responds :bikes method with number of bikes docked' do
-    expect(subject).to respond_to(:bike)
+  it '#bike returns docked bike' do
+    b1 = Bike.new
+    subject.dock_bike(b1)
+    expect(subject.docked_bike).to eq(b1)
+    #expect(subject).to respond_to(:bike)
   end
 end
 

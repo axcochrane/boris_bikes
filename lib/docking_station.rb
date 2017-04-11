@@ -1,7 +1,7 @@
 #require 'bike'
 
 class DockingStation
-	attr_accessor :bike
+	attr_accessor :docked_bike
 
 	def initialize
 		@bikes = []
@@ -14,7 +14,7 @@ class DockingStation
   end
 
   def dock_bike(bike)
-  	@bike = bike
+  	@docked_bike = bike
   end
 
 =begin
