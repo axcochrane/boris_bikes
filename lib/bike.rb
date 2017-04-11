@@ -2,6 +2,7 @@ class Bike
 
 	def initialize
 		@working_status = true
+		@docked_status = false
 	end
 
 	def set_working(new_status)
@@ -12,9 +13,12 @@ class Bike
     @working_status
   end
 
-  def docked?
-  	docked
-  end
+	def set_docked(new_status)
+		@docked_status = new_status
+	end
 
+  def docked?
+    @working_status
+  end
 
 end

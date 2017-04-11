@@ -20,5 +20,6 @@ class DockingStation
   end
 
   def receive_bike(bike)
+  	@bike_count += 1
   end
 end
