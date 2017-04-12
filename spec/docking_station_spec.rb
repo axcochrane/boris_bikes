@@ -31,18 +31,16 @@ describe DockingStation do
       expect { subject.dock Bike.new }.to raise_error 'Docking station full'
     end
 
-
-  end
-
-  describe DockingStation do
     it '#bike returns docked bike' do
-      bike = Bike.new
-      subject.dock(bike)
-      expect(subject.bikes).to eq [bike]
-      #expect(subject).to respond_to(:bike)
+        bike = Bike.new
+        subject.dock(bike)
+        expect(subject.bikes).to eq [bike]
+        #expect(subject).to respond_to(:bike)
     end
   end
-end
+end 
+
+
 
 
 # alias_method :docking_station, :subject

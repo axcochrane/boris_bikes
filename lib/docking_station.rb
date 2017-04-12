@@ -4,8 +4,9 @@ class DockingStation
 	DEFAULT_CAPACITY = 20
 	attr_accessor :bikes
 
-	def initialize
+	def initialize #(alt_capacity)
 	 	@bikes = []
+    #self.DEFAULT_CAPACITY = alt_capacity
 	end
 
   def release_bike
