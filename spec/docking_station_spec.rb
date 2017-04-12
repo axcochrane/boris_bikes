@@ -30,7 +30,7 @@ describe DockingStation do
   it '#bike returns docked bike' do
     b1 = Bike.new
     subject.dock_bike(b1)
-    expect(subject.docked_bike).to eq(b1)
+    expect(subject.bike).to eq(b1)
     #expect(subject).to respond_to(:bike)
   end
 end
