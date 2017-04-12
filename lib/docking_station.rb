@@ -8,12 +8,12 @@ class DockingStation
 	end
 
   def release_bike
-    bike = Bike.new
+    bike
   #  bike.working?
-  #  bike 
+  #  bike
   end
 
-  def dock_bike(bike)
+  def dock(bike)
   	@bike = bike
   end
 

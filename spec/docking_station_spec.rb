@@ -3,45 +3,41 @@ require 'docking_station'
 
 describe DockingStation do
   it { is_expected.to respond_to(:release_bike) }
-end
 
 
-describe DockingStation do
-  it 'instance releases bike;' do
-    expect(subject.release_bike).to be_instance_of(Bike)
+
+    describe '#release_bike' do
+      it 'releases a bike' do
+        bike = Bike.new
+        subject.dock(bike)
+        expect(subject.release_bike).to eq bike
+    end
   end
-end
 
-describe DockingStation do
-  it 'releases working Bike' do
-    bike = subject.release_bike
-    expect(bike).to be_working
+  describe DockingStation do
+    it '(:dock) return instance of Bike class' do
+      bike = Bike.new
+      expect(subject.dock(bike)).to eq(bike)
+    end
   end
-end
 
-describe DockingStation do
-  it '(:dock_bike) return instance of Bike class' do
-    bike = Bike.new
-    expect(subject.dock_bike(bike)).to eq(bike)
-  end
-end
-
-describe DockingStation do
-  it '#bike returns docked bike' do
-    b1 = Bike.new
-    subject.dock_bike(b1)
-    expect(subject.bike).to eq(b1)
-    #expect(subject).to respond_to(:bike)
+  describe DockingStation do
+    it '#bike returns docked bike' do
+      bike = Bike.new
+      subject.dock(bike)
+      expect(subject.bike).to eq(bike)
+      #expect(subject).to respond_to(:bike)
+    end
   end
 end
 
 
-# alias_method :docking_station, :subject 
-# 
-  
+# alias_method :docking_station, :subject
+#
+
 =begin
 
-#alias_method :docking_station, :subject 
+#alias_method :docking_station, :subject
 
   describe "when created" do
     it { is_expected.to respond_to(:release_bike) }
@@ -56,9 +52,9 @@ end
     it "expects the bike it releases to be working" do
      expect(docking_station.release_bike).to be_working
     end
-    
+
     # it { is_expected.to docking_station.release_bike be_working }
-    
+
     # describe "when bike is docked"
     # it "expects docking station to receive a bike" do
     #  expect(docking_station.receive_bike(@bike)).to be_truthy
