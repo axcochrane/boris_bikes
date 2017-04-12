@@ -1,6 +1,7 @@
 require_relative './bike.rb'
 
 class DockingStation
+	DEFAULT_CAPACITY = 20
 	attr_accessor :bikes
 
 	def initialize
@@ -24,7 +25,7 @@ class DockingStation
   end
 
   def full?
-    @bikes.count >= 20
+    @bikes.count >= DEFAULT_CAPACITY
   end
 
 =begin
