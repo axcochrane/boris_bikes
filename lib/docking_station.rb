@@ -3,12 +3,13 @@
 class DockingStation
 	attr_accessor :bike
 
-	def initialize
-		@bikes = []
-	end
+	# def initialize
+	# 	@bikes = []
+	# end
 
   def release_bike
-    bike
+		fail 'No bikes available' unless @bike
+		@bike
   #  bike.working?
   #  bike
   end
