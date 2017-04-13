@@ -8,7 +8,7 @@ describe DockingStation do
 
     describe '#release_bike' do
       it 'releases a bike' do
-        bike = Bike.new
+        bike = double(:bike) #<----
         subject.dock(bike)
         expect(subject.release_bike).to eq bike
       end
@@ -18,7 +18,7 @@ describe DockingStation do
       end
 
       it 'docking stations will not release broken bikes' do
-        bike = Bike.new
+        bike = double(:bike) #<----
         bike.report
         subject.dock(bike)
         expect { subject.release_bike }.to raise_error 'No bikes available'
@@ -28,22 +28,22 @@ describe DockingStation do
 
   describe '#dock' do
     it 'returns instance of Bike class' do
-      bike = Bike.new
+      bike = double(:bike) #<---
       expect(subject.dock(bike)).to eq [bike]
     end
 
     it 'raises an error when full' do
-      subject.capacity.times { subject.dock Bike.new}
-      expect { subject.dock Bike.new }.to raise_error 'Docking station full'
+      subject.capacity.times { subject.dock double(:bike)} #<---
+      expect { subject.dock double(:bike) }.to raise_error 'Docking station full'
     end
 
     it 'can report a bike as broken when i return it' do
-      bike = Bike.new
+      bike = double(:bike) #<----
       expect(subject.dock(bike.report))
     end
 
     it '#bike returns docked bike' do
-        bike = Bike.new
+        bike = double(:bike) #<----
         subject.dock(bike)
         expect(subject.bikes).to eq [bike]
         #expect(subject).to respond_to(:bike)
