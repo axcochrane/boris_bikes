@@ -29,6 +29,11 @@ describe DockingStation do
       expect { subject.dock Bike.new }.to raise_error 'Docking station full'
     end
 
+    it 'can report a bike as broken when i return it' do
+      bike = Bike.new
+      expect(subject.dock(bike.report))
+    end
+
 
 
     it '#bike returns docked bike' do
